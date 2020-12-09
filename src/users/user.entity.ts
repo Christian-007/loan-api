@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Loan } from 'src/loans/loan.entity';
 
 @Entity()
 export class User {
@@ -9,7 +10,7 @@ export class User {
   email: string;
 
   @Column({ unique: true })
-  pin: number;
+  pin: string;
 
   @Column({ unique: true })
   phoneNumber: string;
@@ -22,4 +23,7 @@ export class User {
 
   @Column()
   mediaSource: string;
+
+  @OneToMany(() => Loan, (loan: Loan) => loan.user)
+  loans: Loan[];
 }

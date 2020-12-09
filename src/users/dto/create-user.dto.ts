@@ -6,8 +6,8 @@ export class CreateUserDto {
   email: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  pin: number;
+  @IsString()
+  pin: string;
 
   @IsNotEmpty()
   @IsString()

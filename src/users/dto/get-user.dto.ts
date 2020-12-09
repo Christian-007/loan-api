@@ -1,7 +1,7 @@
 export class GetUserDto {
   id: string;
   email: string;
-  pin: number;
+  pin: string;
   phoneNumber: string;
   firstName: string;
   lastName: string;
