@@ -14,7 +14,7 @@ export class LoansService {
   ) {}
 
   findAll(): Promise<Loan[]> {
-    return this.loanRepository.find();
+    return this.loanRepository.find({ relations: ['user'] });
   }
 
   async create(createLoanDto: CreateLoanDto, user: User): Promise<Loan> {
